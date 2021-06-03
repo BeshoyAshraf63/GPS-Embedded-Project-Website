@@ -1,5 +1,5 @@
 const dataField = document.getElementById("data");
-const serverBaseUrl = 'http://localhost:8081'; //will be changed if deployed on any live server as heroku
+const serverBaseUrl = 'https://gps-embedded-project.herokuapp.com'; //will be changed if deployed on any live server as heroku
 
 setInterval(function(){
     getData()
