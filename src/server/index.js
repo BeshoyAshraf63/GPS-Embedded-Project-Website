@@ -26,16 +26,18 @@ app.listen(port, function () {
     console.log(`Example app listening on port ${port}!`)
 })
 
-let dataInterval = setInterval(function(){
-  data = "not connected"
-}, 10000);
+let globalTimout;
 
 app.post('/postdata',receiveData);
 app.post('/getdata',sendData);
 
 function receiveData(req, res){
+  clearTimeout(globalTimout);
   data = req.body.data;
   res.send("DONE");
+  globalTimout = setTimeout(function(){
+    data = "not connected"
+  }, 10000);
 }
 
 function sendData(req, res){
