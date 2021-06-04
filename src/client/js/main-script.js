@@ -1,7 +1,7 @@
 $(document).ready(function(){
   //const dataField = document.getElementById("data");
-  // const serverBaseUrl = 'https://gps-embedded-project.herokuapp.com';
-  const serverBaseUrl = 'http://localhost:8081';
+  const serverBaseUrl = 'https://gps-embedded-project.herokuapp.com';
+  //const serverBaseUrl = 'http://localhost:8081';
   const test = "GPRMC,220516,A,3012.63195388,S,3127.02476407,W,2.5,231.8,060421,004.2,W*70";
   let connection = "Not Connected", distance, latitude, longitude, time, date, speed;
   updateUi();
