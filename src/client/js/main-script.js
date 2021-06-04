@@ -20,6 +20,8 @@ $(document).ready(function(){
             time = dataArr[1].substring(0,2) + ":" + dataArr[1].substring(2,4) + ":" + dataArr[1].substring(4,6);
             date = dataArr[9].substring(0,2) + "/" + dataArr[9].substring(2,4) + "/20" + dataArr[9].substring(4,6);
             speed = dataArr[7] * 0.514444;
+            dataArr[3] = toString(parseFloat(dataArr[3]));
+            dataArr[5] = toString(parseFloat(dataArr[5]));
             latitude = parseInt(dataArr[3].substring(0,2)) + (parseFloat(dataArr[3].substring(2,dataArr[3].length)) / 60);
             if(dataArr[4] == "S") latitude *= -1;
             longitude = parseInt(dataArr[5].substring(0,2)) + (parseFloat(dataArr[5].substring(2,dataArr[5].length)) / 60);
