@@ -51,7 +51,7 @@ $(document).ready(function(){
     if(connection == "Not Connected"){
       $("#status").text(connection).addClass("status-danger");
     }else if(connection == "connecting"){
-      $("#status").text("Connecting...")
+      $("#status").html("Connecting...<br><span>Please stay outdoors<span>")
     }else if(connection == "connected"){
       $("#status").text("Connected").addClass("status-success");
       $("#distance").text(distance + " m");
