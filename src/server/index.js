@@ -4,7 +4,8 @@ const dotenv = require('dotenv');
 //const request = require('request');
 dotenv.config();
 
-let data = "not connected";
+let data = "Not Connected";
+let distance = 0;
 
 const port = process.env.PORT || 8081;
 const app = express()
@@ -34,13 +35,14 @@ app.post('/getdata',sendData);
 function receiveData(req, res){
   clearTimeout(globalTimout);
   data = req.body.data;
+  distance = parseInt(req.body.distance);
   res.send("DONE");
   globalTimout = setTimeout(function(){
-    data = "not connected"
+    data = "Not Connected"
   }, 10000);
 }
 
 function sendData(req, res){
-  res.send({"data": data});
+  res.send({"data": data, "distance": distance});
 }
 module.exports = app;
