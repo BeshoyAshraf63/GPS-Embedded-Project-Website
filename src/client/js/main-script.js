@@ -12,6 +12,9 @@ $(document).ready(function(){
           let data = dataObj.data;
           if (data == "connecting" || data == "Not Connected"){
             connection = data;
+          }else if(data == "reached distination"){
+            connection = data;
+            distance = dataObj.distance;
           }else{
             connection = "connected";
             distance = dataObj.distance;
@@ -28,6 +31,7 @@ $(document).ready(function(){
             if(dataArr[6] == "W") longitude *= -1;
             
           }
+          console.log(dataObj)
           updateUi();
       })
   }, 3000)
@@ -54,6 +58,9 @@ $(document).ready(function(){
       $("#status").text(connection).addClass("status-danger");
     }else if(connection == "connecting"){
       $("#status").html("Connecting...<br><span>Please stay outdoors<span>")
+    }else if(connection == "reached distination"){
+      $("#status").html("Connected<br><span>You reached your distination<span>").addClass("status-success");
+      $("#distance").text(distance + " m");
     }else if(connection == "connected"){
       $("#status").text("Connected").addClass("status-success");
       $("#distance").text(distance + " m");
