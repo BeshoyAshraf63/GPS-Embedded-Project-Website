@@ -6,6 +6,7 @@ dotenv.config();
 
 let data = "Not Connected";
 let destinationCoordinates = "coords*30.063921528763213,31.280019999858254*terminator";
+let terminator = "terminator";
 let distance = 0;
 
 const port = process.env.PORT || 8081;
@@ -37,7 +38,7 @@ function receiveData(req, res){
   clearTimeout(globalTimout);
   data = req.body.data;
   distance = parseInt(req.body.distance);
-  res.send(destinationCoordinates);
+  res.send(terminator);
   globalTimout = setTimeout(function(){
     data = "Not Connected"
   }, 10000);
