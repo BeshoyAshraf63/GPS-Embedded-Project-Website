@@ -5,7 +5,6 @@ const dotenv = require('dotenv');
 dotenv.config();
 
 let data = "Not Connected";
-let destinationCoordinates = "coords*30.063921528763213,31.280019999858254*terminator";
 let terminator = "terminator";
 let distance = 0;
 
