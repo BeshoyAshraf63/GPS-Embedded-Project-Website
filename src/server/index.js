@@ -5,7 +5,7 @@ const dotenv = require('dotenv');
 dotenv.config();
 
 let data = "Not Connected";
-let destinationCoordinates = "30.063921528763213,31.280019999858254\n";
+let destinationCoordinates = "coords-start*30.063921528763213,31.280019999858254*coords-end";
 let distance = 0;
 
 const port = process.env.PORT || 8081;
